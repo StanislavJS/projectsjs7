@@ -116,6 +116,8 @@
   }
 
   .discount-text {
-    white-space: nowrap;
+    white-space: nowrap; /* Запрещает перенос текста */
+    overflow: hidden; /* Обрезает лишний текст, если он не влезает */
+    text-overflow: ellipsis; /* Добавляет троеточие, если текст выходит за границы */
   }
 }
