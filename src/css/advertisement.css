@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  height: auto;
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.text-wrapper {
+  width: 100%;
+  max-width: 1080px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.discount-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap; /* Разрешает перенос текста */
+}
+
+.discount-text {
+  padding: 10px 5vw;
+  background-color: #576f35;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 12px;
+  display: block; /* Теперь текст переносится */
+  font-size: clamp(32px, 6vw, 76px);
+  width: auto; /* Автоматическая ширина */
+  max-width: 100%; /* Не выходит за границы */
+  text-align: center; /* Центрируем текст внутри */
+  word-wrap: break-word; /* Перенос длинных слов */
+}
+
+.taste {
+  font-weight: 600;
+  color: #141414;
+  font-size: clamp(32px, 6vw, 76px);
+}
+
+.health-text {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 600;
+  color: #141414;
+  font-size: clamp(32px, 6vw, 76px);
+  text-align: left;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+/* 📱 Мобильная версия (до 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 10px;
+  }
+
+  .discount-wrapper {
+    flex-wrap: wrap; /* Разрешаем перенос на мобильных */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .discount-text {
+    padding: 8px 10px;
+    width: 100%; /* Растягивается и переносится */
+    white-space: normal; /* Позволяет перенос текста */
+  }
+
+  .discount-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .discount-text {
+    padding: 8px 10px;
+    width: 100%; /* Занимает всю ширину, переносится */
+  }
+}
+
+/* 📱 Планшетная версия (768px - 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 40px 20px;
+  }
+}
+
+/* 🖥️ Десктоп (от 1025px и выше) */
+@media (min-width: 1025px) {
+  .container {
+    padding: 100px;
+  }
+
+  .discount-text {
+    white-space: nowrap;
+  }
+}
